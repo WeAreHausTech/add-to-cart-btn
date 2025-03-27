@@ -1,13 +1,42 @@
+name: Publish Widget
+
+on:
+  workflow_call:
+    inputs:
+      widget-path:
+        required: true
+        type: string
+      version:
+        required: true
+        type: string
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+
       - name: Bump composer version
-        working-directory: ${{ inputs.widget-path }}
         run: composer config version "${{ inputs.version }}"
 
-      - name: Commit version bump & tag
+      - name: Commit version bump
         working-directory: ${{ inputs.widget-path }}
         run: |
           NAME=$(basename "${{ inputs.widget-path }}")
           git add "${{ inputs.widget-path }}/composer.json"
-          git commit -m "chore: bump $NAME to v${{ inputs.version }}"
+          git commit -am "chore: bump $NAME to v${{ inputs.version }}"
+
+      - name: Create tag
+        run: |
+          NAME=$(basename "${{ inputs.widget-path }}")
           git tag "$NAME-v${{ inputs.version }}"
 
       - name: Push to monorepo (no tags)
