@@ -1,13 +1,15 @@
 name: Publish add-to-cart-btn
+
 on:
   workflow_dispatch:
     inputs:
-    version:
-      description: "New widget version"
-      required: true
+      version:
+        description: 'Version number'
+        required: true
+        default: 'v1.0.0-dev'
 
 jobs:
-  call:
+  publish:
     uses: ./.github/workflows/publish-widget-template.yml
     with:
       widget-path: widgets/add-to-cart-btn
