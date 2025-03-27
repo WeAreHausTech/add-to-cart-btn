@@ -24,6 +24,12 @@ jobs:
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
 
+      - name: Validate version input
+        if: ${{ inputs.version == '' }}
+        run: |
+          echo "❌ version cannot be empty" >&2
+          exit 1
+
       - name: Bump composer version
         run: composer config version "${{ inputs.version }}"
 

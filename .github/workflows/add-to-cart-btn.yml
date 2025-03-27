@@ -1,6 +1,10 @@
 name: Publish add-to-cart-btn
 on:
   workflow_dispatch:
+    inputs:
+    version:
+      description: "New widget version"
+      required: true
 
 jobs:
   call:
