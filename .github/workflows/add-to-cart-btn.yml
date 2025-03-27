@@ -1,0 +1,10 @@
+name: Publish add-to-cart-btn
+on:
+  workflow_dispatch:
+
+jobs:
+  call:
+    uses: ./.github/workflows/publish-widget-template.yml
+    with:
+      widget-path: widgets/add-to-cart-btn
+      version: ${{ github.event.inputs.version }}
