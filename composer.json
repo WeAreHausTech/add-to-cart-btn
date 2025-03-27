@@ -2,5 +2,6 @@
     "name": "haus-storefront/haus-storefront-widgets",
     "repositories": [
       { "type": "path", "url": "widgets/*" }
-    ]
+    ],
+    "version": "0.1.3"
 }
