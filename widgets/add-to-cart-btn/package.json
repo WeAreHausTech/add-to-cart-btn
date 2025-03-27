@@ -1,0 +1,19 @@
+{
+  "name": "@haus-storefront/add-to-cart-btn",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "scripts": {
+    "build": "vite build"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@haus-storefront/add-to-cart-btn": "^1.0.5",
+    "@haus-storefront/core": "^1.0.5",
+    "@haus-storefront/hooks": "^1.0.5"
+  }
+}

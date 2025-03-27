@@ -1,0 +1,6 @@
+{
+    "name": "haus-storefront/haus-storefront-widgets",
+    "repositories": [
+      { "type": "path", "url": "widgets/*" }
+    ]
+  }

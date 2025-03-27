@@ -1,0 +1,21 @@
+{
+  "private": true,
+  "workspaces": [
+    "widgets/*"
+  ],
+  "scripts": {
+    "build": "yarn workspaces foreach run build"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.69.0",
+    "@tanstack/react-query-devtools": "^5.69.0",
+    "@types/react": "^19.0.12",
+    "@vitejs/plugin-react": "^4.3.4",
+    "lodash": "^4.17.21",
+    "path": "^0.12.7",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-i18next": "^15.4.1",
+    "vite": "^6.2.3"
+  }
+}

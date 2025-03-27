@@ -1,0 +1,15 @@
+{
+  "name": "@haus-storefront/widgets-renderer",
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "vite build"
+  },
+  "files": ["dist"],
+  "dependencies": {
+    "@haus-storefront/core": "^1.0.5"
+  }
+}
