@@ -34,7 +34,6 @@ jobs:
         run: composer config version "${{ inputs.version }}"
 
       - name: Commit version bump
-        working-directory: ${{ inputs.widget-path }}
         run: |
           NAME=$(basename "${{ inputs.widget-path }}")
           git add "${{ inputs.widget-path }}/composer.json"
