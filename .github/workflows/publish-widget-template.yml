@@ -31,12 +31,15 @@ jobs:
           exit 1
 
       - name: Bump composer version
+        working-directory: ${{ inputs.widget-path }}
         run: composer config version "${{ inputs.version }}"
 
+
       - name: Commit version bump
+        working-directory: ${{ inputs.widget-path }}
         run: |
           NAME=$(basename "${{ inputs.widget-path }}")
-          git add "${{ inputs.widget-path }}/composer.json"
+          git add "/composer.json"
           git commit -am "chore: bump $NAME to v${{ inputs.version }}"
 
       - name: Create tag
@@ -57,5 +60,5 @@ jobs:
         run: |
           NAME=$(basename "${{ inputs.widget-path }}")
           BR="release/$NAME"
-          REPO="https://github.com/WeAreHausTech/$NAME.git"
+          REPO="https://x-access-token:${{ secrets.WIDGET_REPO_PAT }}@github.com/WeAreHausTech/$NAME.git"
           git push "$REPO" "$BR:main" --tags
