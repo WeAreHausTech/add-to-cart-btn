@@ -3,4 +3,4 @@
     "repositories": [
       { "type": "path", "url": "widgets/*" }
     ]
-  }
+}
