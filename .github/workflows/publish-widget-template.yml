@@ -39,7 +39,7 @@ jobs:
         working-directory: ${{ inputs.widget-path }}
         run: |
           NAME=$(basename "${{ inputs.widget-path }}")
-          git add "/composer.json"
+          git add "${{ inputs.widget-path }}/composer.json"
           git commit -am "chore: bump $NAME to v${{ inputs.version }}"
 
       - name: Create tag
